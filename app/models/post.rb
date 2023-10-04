@@ -11,4 +11,7 @@
 #  board_id   :integer
 #
 class Post < ApplicationRecord
+  def self.expired
+    where('expires_on < ?', Date.today)
+  end
 end
