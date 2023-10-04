@@ -11,7 +11,16 @@
 #  board_id   :integer
 #
 class Post < ApplicationRecord
+  validates(:title, presence: true)
+  validates(:body, presence: true)
+  validates(:expires_on, presence: true)
+  validates(:board_id, presence: true)
+
   def self.expired
     where('expires_on < ?', Date.today)
+  end
+
+  def self.active
+    where('expires_on > ?', Date.today)
   end
 end

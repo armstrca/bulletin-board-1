@@ -8,6 +8,10 @@
   </div>
 </div>
 
+<div style="color:green;"><%= notice %></div>
+<div style="color:red;"><%= alert %></div>
+
+
 <hr>
 
 <div>
@@ -41,6 +45,9 @@
         <input type="date" id="expires_on_box" name="query_expires_on">
       </div>
 
+  <input type="hidden" id="board_id_box" name="query_board_id" value="<%= params.fetch("path_id") %>">
+
+
       <button>
         Add post
       </button>
@@ -70,12 +77,12 @@
         </th>
 
         <th>
-          Expired on
+          Expires on
         </th>
 
       </tr>
 
-      <% @list_of_board_posts.each do |a_post| %>
+      <% @list_of_board_posts.active.each do |a_post| %>
       <tr>
 
         <td>
