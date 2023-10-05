@@ -4,13 +4,11 @@
       <%= @the_board.name %>
     </h1>
 
-   
   </div>
 </div>
 
 <div style="color:green;"><%= notice %></div>
 <div style="color:red;"><%= alert %></div>
-
 
 <hr>
 
@@ -45,8 +43,7 @@
         <input type="date" id="expires_on_box" name="query_expires_on">
       </div>
 
-  <input type="hidden" id="board_id_box" name="query_board_id" value="<%= params.fetch("path_id") %>">
-
+      <input type="hidden" id="board_id_box" name="query_board_id" value="<%= params.fetch("path_id") %>">
 
       <button>
         Add post
@@ -57,9 +54,8 @@
 
 <hr>
 
-
 <div>
-<h2>Active posts</h2>
+  <h2>Active posts</h2>
   <div>
     <table border="1">
       <tr>
@@ -83,32 +79,32 @@
       </tr>
 
       <% @list_of_board_posts.active.each do |a_post| %>
-      <tr>
+        <tr>
 
-        <td>
-          <%= a_post.title %>
-        </td>
+          <td>
+            <%= a_post.title %>
+          </td>
 
-        <td>
-          <%= a_post.body %>
-        </td>
+          <td>
+            <%= a_post.body %>
+          </td>
 
-        <td>
-          <%= a_post.created_at %>
-        </td>
+          <td>
+            <%= a_post.created_at %>
+          </td>
 
-        <td>
-          <%= a_post.expires_on %>
-        </td>
+          <td>
+            <%= a_post.expires_on %>
+          </td>
 
-      </tr>
+        </tr>
       <% end %>
     </table>
   </div>
 </div>
 
 <div>
-<h2>Expired posts</h2>
+  <h2>Expired posts</h2>
   <div>
     <table border="1">
       <tr>
@@ -132,26 +128,25 @@
       </tr>
 
       <% @list_of_board_posts.expired.each do |a_post| %>
-      <tr>
+        <tr>
 
+          <td>
+            <%= a_post.title %>
+          </td>
 
-        <td>
-          <%= a_post.title %>
-        </td>
+          <td>
+            <%= a_post.body %>
+          </td>
 
-        <td>
-          <%= a_post.body %>
-        </td>
+          <td>
+            <%= a_post.created_at %>
+          </td>
 
-        <td>
-          <%= a_post.created_at %>
-        </td>
+          <td>
+            <%= a_post.expires_on %>
+          </td>
 
-        <td>
-          <%= a_post.expires_on %>
-        </td>
-
-      </tr>
+        </tr>
       <% end %>
     </table>
   </div>
